@@ -15,7 +15,7 @@ class SignUp extends React.Component {
       displayName: '',
       email: '',
       password: '',
-      confirmPassword: ''
+      confirmPassword: '',
     };
   }
 
@@ -37,14 +37,18 @@ class SignUp extends React.Component {
 
       await createUserProfileDocument(user, { displayName });
 
+      //reset our initial state
       this.setState({
         displayName: '',
         email: '',
         password: '',
-        confirmPassword: ''
+        confirmPassword: '',
       });
+
+      //TODO make a better error UI later
     } catch (error) {
       console.error(error);
+      alert(error);
     }
   };
 

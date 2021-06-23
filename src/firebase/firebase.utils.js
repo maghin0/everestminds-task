@@ -5,6 +5,8 @@ import 'firebase/auth';
 const config = {
   apiKey: 'AIzaSyBx5ZDZWeCjSBVrwJGWA_FmjKn4zTHQ0U0',
   authDomain: 'everestminds-task.firebaseapp.com',
+  databaseURL:
+    'https://everestminds-task-default-rtdb.europe-west1.firebasedatabase.app',
   projectId: 'everestminds-task',
   storageBucket: 'everestminds-task.appspot.com',
   messagingSenderId: '772183598481',

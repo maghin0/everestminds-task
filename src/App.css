@@ -1,8 +1,8 @@
-html {
-  scrollbar-color: #f9f0f0; /* thumb and track color */
+/* html {
+  scrollbar-color: #f9f0f0; 
   scrollbar-width: thin;
   scroll-behavior: smooth;
-}
+} */
 
 body {
   font-family: 'poppins';
