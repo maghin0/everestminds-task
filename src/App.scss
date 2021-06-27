@@ -1,12 +1,16 @@
-/* html {
-  scrollbar-color: #f9f0f0; 
+html {
+  scrollbar-color: #f9f0f0;
   scrollbar-width: thin;
   scroll-behavior: smooth;
-} */
+}
 
 body {
-  font-family: 'poppins';
+  font-family: 'Open Sans Condensed';
   padding: 20px 40px;
+
+  @media screen and (max-width: 800px) {
+    padding: 10px;
+  }
 }
 
 a {
