@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# App description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple online fashion store created with FERN (firebase, express, react, node).
+In this web app you can
 
-## Available Scripts
+•Create accounts
+•Login
+•Persist data
+•View categories, collections, and shop
+•Add items to cart and increase those items or remove them while viewing total price.
+•Pay
+•Load data while fetching.  
+•View on mobile (responsive)
 
-In the project directory, you can run:
+## App process
 
-### `npm start`
+My approach was a dry manner style for minimalism. I could have gone with full MERN project, but time was short, so I decided to go for a FERN build, leveraging the firebase authentication which does JWT and password hashing as well as disabling the accounts.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+First comes the architecture of my app
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Then set up firebase and firestore.
 
-### `npm test`
+then built the front-end with react and redux and then as I still had to handle payments using stripe.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+DEPLOY, finally it was a MVP and so why not deploy the project to heroku!
 
-### `npm run build`
+[deployment](https://everestminds-with-server.herokuapp.com/)
+**please keep in mind this is a free server so it goes to sleep and may take 2 sec to load if it was not accessed for more than 20-30 min**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+then looking at hooks and how clean code can be with them in my opinion I decided to switch some of my components from class to the to ES6 hooks.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+also wanted to play around with styled components in javascript, so I made one (I do understand that there is no need for a whole library but it's just for the sake of learning).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+then went to build the firebase firestore data store.
 
-### `npm run eject`
+I also wanted to make the app a PWA so I worked on the serviceWorker
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This app was not coded mobile first, but I still wanted to make it responsive so started adding some media queries.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I wanted to demonstrate use of middleware using express to add payments functionality using strip.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Redux for state management
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Data persistence-
+In our index.js we wrap our app with PersistGate
 
-## Learn More
+We need to set it up on our redux/store.js as well
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## `const persistor = persistStore(store);`
