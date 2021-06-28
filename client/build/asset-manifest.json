@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.e7ff15d9.chunk.css",
-    "main.js": "/static/js/main.86ea66ba.chunk.js",
-    "main.js.map": "/static/js/main.86ea66ba.chunk.js.map",
+    "main.css": "/static/css/main.95853454.chunk.css",
+    "main.js": "/static/js/main.e0c1c642.chunk.js",
+    "main.js.map": "/static/js/main.e0c1c642.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.e63e095b.js",
     "runtime-main.js.map": "/static/js/runtime-main.e63e095b.js.map",
     "static/js/2.0eca480c.chunk.js": "/static/js/2.0eca480c.chunk.js",
     "static/js/2.0eca480c.chunk.js.map": "/static/js/2.0eca480c.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.e7ff15d9.chunk.css.map": "/static/css/main.e7ff15d9.chunk.css.map",
+    "static/css/main.95853454.chunk.css.map": "/static/css/main.95853454.chunk.css.map",
     "static/js/2.0eca480c.chunk.js.LICENSE.txt": "/static/js/2.0eca480c.chunk.js.LICENSE.txt",
     "static/media/asset.9c3b52f7.svg": "/static/media/asset.9c3b52f7.svg",
     "static/media/shopping-bag.a688874f.svg": "/static/media/shopping-bag.a688874f.svg"
@@ -16,7 +16,7 @@
   "entrypoints": [
     "static/js/runtime-main.e63e095b.js",
     "static/js/2.0eca480c.chunk.js",
-    "static/css/main.e7ff15d9.chunk.css",
-    "static/js/main.86ea66ba.chunk.js"
+    "static/css/main.95853454.chunk.css",
+    "static/js/main.e0c1c642.chunk.js"
   ]
 }

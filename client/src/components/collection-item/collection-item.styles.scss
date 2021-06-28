@@ -37,7 +37,9 @@
   }
   @media screen and (max-width: 800px) {
     width: 40vw;
-
+    button {
+      font-size: 0.5rem;
+    }
     &:hover {
       .image {
         opacity: unset;
