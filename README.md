@@ -78,7 +78,9 @@ In our index.js we wrap our app with
 
 We need to set it up on our redux/store
 
-## `const persistor = persistStore(store);`
+```javascript
+const persistor = persistStore(store);
+```
 
 And config in the redux/root-reducer
 
@@ -96,7 +98,9 @@ const persistConfig = {
 
 set up firebase
 
-## `firebase.initializeApp(config);`
+```javascript
+firebase.initializeApp(config);
+```
 
 built the firebase firestore data store.
 
