@@ -26,32 +26,33 @@ My approach was a dry manner style for minimalism. I could have gone with full M
 
 ### Architecture
 
-[simple ERD:](simple-ERD.JPG)
+[simple ERD](simple-ERD.JPG)
 
 ### React
 
 Building the front-end came after that using small modular components.
 
-[Here](https://github.com/facebook/create-react-app)you can check out how to quickly get started with react.
+[Here](https://github.com/facebook/create-react-app) you can check out how to quickly get started with react.
 
 ## Redux for state management
 
 Using reducers and actions you can handle the state for react, to make sure we are not state drilling through our components.
-{
+
+```javascript
 import { createStore } from 'redux'
 
-<!-- /**
- * This is a reducer - a function that takes a current state value and an
- * action object describing "what happened", and returns a new state value.
- * A reducer's function signature is: (state, action) => newState
- *
- * The Redux state should contain only plain JS objects, arrays, and primitives.
- * The root state value is usually an object.  It's important that you should
- * not mutate the state object, but return a new object if the state changes.
- *
- * You can use any conditional logic you want in a reducer. In this example,
- * we use a switch statement, but it's not required.
- */ -->
+  <!-- /**
+  * This is a reducer - a function that takes a current state value and an
+  * action object describing "what happened", and returns a new state value.
+  * A reducer's function signature is: (state, action) => newState
+  *
+  * The Redux state should contain only plain JS objects, arrays, and primitives.
+  * The root state value is usually an object.  It's important that you should
+  * not mutate the state object, but return a new object if the state changes.
+  *
+  * You can use any conditional logic you want in a reducer. In this example,
+  * we use a switch statement, but it's not required.
+  */ -->
 
 function counterReducer(state = { value: 0 }, action) {
 switch (action.type) {
@@ -63,17 +64,33 @@ default:
 return state
 }
 }
-}
+```
 
 Data persistence-
 
-In our index.js we wrap our app with `<PersistGate> <App/></PersistGate>`
+In our index.js we wrap our app with
 
-We need to set it up on our redux/store.js as well
+```javascript
+<PersistGate>
+  <App />
+</PersistGate>
+```
+
+We need to set it up on our redux/store
 
 ## `const persistor = persistStore(store);`
 
-[Here](https://github.com/reduxjs/redux)you can check out redux.
+And config in the redux/root-reducer
+
+```javascript
+const persistConfig = {
+  key: 'root',
+  storage,
+  whitelist: ['cart', 'directory', 'shop'],
+};
+```
+
+[Here](https://github.com/reduxjs/redux) you can check out redux.
 
 ### Firebase
 
@@ -83,26 +100,26 @@ set up firebase
 
 built the firebase firestore data store.
 
-## `const userRef = firestore.doc(`users/${userAuth.uid}`);`
+```javascript
+const userRef = firestore.doc(`users/${userAuth.uid}`);
 
-{
 if (!snapShot.exists) {
-const { displayName, email } = userAuth;
-const createdAt = new Date();
-try {
-await userRef.set({
-displayName,
-email,
-createdAt,
-...additionalData,
-});
-} catch (error) {
-console.log('error creating user', error.message);
-}
+  const { displayName, email } = userAuth;
+  const createdAt = new Date();
+  try {
+    await userRef.set({
+      displayName,
+      email,
+      createdAt,
+      ...additionalData,
+    });
+  } catch (error) {
+    console.log('error creating user', error.message);
+  }
 }
 
 return userRef;
-};
+```
 
 [Here](https://github.com/firebase/quickstart-js) you can check out the quick start for firebase if you would like to learn more.
 
@@ -135,7 +152,7 @@ In your index.js change
 
 Is the main part then some tweeks here and there on your manifest file
 
-[Here](https://create-react-app.dev/docs/making-a-progressive-web-app/)you can take a look at the PWA and why you should enable it with react.
+[Here](https://create-react-app.dev/docs/making-a-progressive-web-app/) you can take a look at the PWA and why you should enable it with react.
 
 ## Responsive
 
@@ -143,4 +160,22 @@ This app was not coded mobile first, but I still wanted to make it responsive so
 
 ## Express.js
 
-I wanted to demonstrate use of middleware using express to add payments functionality using strip.
+I wanted to demonstrate use of middleware using express to add payments functionality using stripe.
+
+```javascript
+//basic server
+if (process.env.NODE_ENV === 'production') {
+app.use(express.static(path.join(\_\_dirname, 'client/build')));
+
+    app.get('*', function (req, res) {
+      res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    });
+
+}
+```
+
+Express is a library of middleware functions that makes it much easier to write nodejs.
+
+[Here](https://github.com/expressjs/express) you can check out expressjs.
+
+lastly, this project was very fun and I learned a lot building it, hope you like it.
