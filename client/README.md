@@ -4,12 +4,19 @@ This is a simple online fashion store created with FERN (firebase, express, reac
 In this web app you can
 
 •Create accounts
+
 •Login
+
 •Persist data
+
 •View categories, collections, and shop
+
 •Add items to cart and increase those items or remove them while viewing total price.
+
 •Pay
-•Load data while fetching.  
+
+•Load data while fetching.
+
 •View on mobile (responsive)
 
 ## App process
@@ -20,18 +27,18 @@ First comes the architecture of my app
 
 Then set up firebase and firestore.
 
-then built the front-end with react and redux and then as I still had to handle payments using stripe.
+Building the front-end came after that using react and redux and then as I still had to handle payments using stripe.
 
 DEPLOY, finally it was a MVP and so why not deploy the project to heroku!
 
-[deployment](https://everestminds-with-server.herokuapp.com/)
+[deployment of the project:](https://everestminds-with-server.herokuapp.com/)
 **please keep in mind this is a free server so it goes to sleep and may take 2 sec to load if it was not accessed for more than 20-30 min**
 
 then looking at hooks and how clean code can be with them in my opinion I decided to switch some of my components from class to the to ES6 hooks.
 
 also wanted to play around with styled components in javascript, so I made one (I do understand that there is no need for a whole library but it's just for the sake of learning).
 
-then went to build the firebase firestore data store.
+after that went to build the firebase firestore data store.
 
 I also wanted to make the app a PWA so I worked on the serviceWorker
 
